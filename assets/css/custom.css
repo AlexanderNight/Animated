@@ -1,0 +1,294 @@
+body {
+	/* cursor: url('/assets/img/cursor/SVGRepo_iconCarrier.svg') , auto; */
+	
+ 
+}
+
+.lds-loader__container{
+	z-index: 1000;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #868484;
+	
+}
+
+.loader-hidden {
+	
+		animation: hidden 1.5s 0.5s linear forwards;
+	}
+
+@keyframes hidden {
+	0%{
+		
+		opacity: 1;
+	}
+	100% {
+			opacity: 0;
+			display: none;
+		}
+}
+
+.lds-roller,
+.lds-roller div,
+.lds-roller div:after {
+	box-sizing: border-box;
+}
+
+.lds-roller {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+
+.lds-roller div {
+	animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	width: 7.2px;
+	height: 7.2px;
+	border-radius: 50%;
+	background: currentColor;
+	margin: -3.6px 0 0 -3.6px;
+}
+
+.lds-roller div:nth-child(1) {
+	animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+	top: 62.62742px;
+	left: 62.62742px;
+}
+
+.lds-roller div:nth-child(2) {
+	animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+	top: 67.71281px;
+	left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+	animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+	top: 70.90963px;
+	left: 48.28221px;
+}
+
+.lds-roller div:nth-child(4) {
+	animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+	top: 72px;
+	left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+	animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+	top: 70.90963px;
+	left: 31.71779px;
+}
+
+.lds-roller div:nth-child(6) {
+	animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+	top: 67.71281px;
+	left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+	animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+	top: 62.62742px;
+	left: 17.37258px;
+}
+
+.lds-roller div:nth-child(8) {
+	animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+	top: 56px;
+	left: 12.28719px;
+}
+
+@keyframes lds-roller {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+
+
+
+.cursor{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid black;
+	position: absolute;
+	transition-duration: 200ms;
+	transition-timing-function: ease-out;
+	animation: cursorAnim .5s infinite alternate ;
+	z-index: 1;
+}
+.cursor::after{
+	
+	content: "";
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border: 8px solid gray;
+	border-radius: 50%;
+	opacity: .5;
+	top: -1px;
+	left:-1px;
+	animation: cursorAnim2 .5s infinite alternate;
+	/* z-index: 1000; */
+
+}
+@keyframes cursorAnim {
+	0%{
+transform: scale(1);
+	}
+	
+	100%{
+transform: scale(.7);
+	}
+}
+@keyframes cursorAnim2 {
+	0% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(1.6);
+	}
+}
+.expand{
+	animation: cursorAnim3 .5s forwards;
+	border: 1px solid red;
+}
+@keyframes cursorAnim3 {
+	0% {
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(3)
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+
+header .navbar-expand .navbar-nav .nav-item .nav-link {
+	transition: opacity var(--transition-function) var(--transition-duration);
+}
+
+header .navbar-expand .navbar-nav .nav-item .nav-link::after {
+	transition: transform var(--transition-function) var(--transition-duration);
+}
+ header .navbar-expand .navbar-nav .nav-item:hover .nav-link {
+	opacity: 0.6;
+} 
+
+ header .navbar-expand .navbar-nav .nav-item:hover .nav-link::after {
+	transform: scale(1);
+}  
+
+.nav-item:hover .nav-link::after {
+	transform: scale(1);
+} 
+.marquee[data-animated="true"] .scroller__inner {
+	width: max-content;
+	animation: scroll 100s forwards linear infinite;
+}
+@keyframes scroll {
+	to {
+		transform: translate(calc(-50% - 0.5rem));
+	}
+}
+
+.list-unstyled li:nth-child(odd) {
+	transform: rotate(4deg);	
+}
+.marquee .scroller__inner:hover{
+	animation-play-state: paused;
+	
+}
+
+.list-unstyled li:nth-child(even) {
+	transform: rotate(-4deg);
+}
+.image-holder:hover .fade-down {
+	transform: translateY(0);
+	opacity: 1;
+	transition: 0.5s;
+	background-size: 0% 0%;
+	transition: 0.5s;
+
+}
+
+.card:hover .heading .title a {
+	background-size: 0% 0%;
+	transition: 0.5s;
+}
+.arrow-anime:hover .icon{
+	animation: arrow ease-out var(--transition-duration);
+}
+
+@keyframes arrow {
+	0% {
+		transform: translateX(0);
+	}
+
+	25% {
+		opacity: 0;
+	}
+
+	30% {
+		transform: translateX(16px);
+	}
+
+	35% {
+		transform: translateX(-16px);
+	}
+
+	85% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+
